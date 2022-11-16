@@ -854,10 +854,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #schedule .schedule-item .speaker {
-  width: 60px;
-  height: 60px;
+  width: 6.25rem;
+  height: 6.25rem;
   overflow: hidden;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   float: left;
   margin: 0 10px 10px 0;
 }
