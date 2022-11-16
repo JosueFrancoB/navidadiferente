@@ -944,10 +944,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   overflow: hidden;
   border-right: 3px solid #fff;
   border-bottom: 3px solid #fff;
+  height: 350px;
 }
 
 #venue .venue-gallery img {
   transition: all ease-in-out 0.4s;
+
 }
 
 #venue .venue-gallery:hover img {
