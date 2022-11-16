@@ -944,7 +944,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   overflow: hidden;
   border-right: 3px solid #fff;
   border-bottom: 3px solid #fff;
-  height: 350px;
+  height: 21.875rem;
 }
 
 #venue .venue-gallery img {
@@ -1661,4 +1661,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   #subscribe button {
     margin-top: 10px;
   }
+}
+
+.img-gallery{
+  height: 16.5625rem;
 }
