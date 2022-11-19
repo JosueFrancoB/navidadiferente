@@ -1654,6 +1654,18 @@ body.mobile-nav-active #mobile-nav-toggle {
   #faq #faq-list i {
     top: 13px;
   }
+  
+}
+
+.list-group{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.list-group-item{
+  min-width: 200px;
 }
 
 @media (max-width: 767px) {
