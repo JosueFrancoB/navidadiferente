@@ -1666,3 +1666,22 @@ body.mobile-nav-active #mobile-nav-toggle {
 .img-gallery{
   height: 16.5625rem;
 }
+
+
+/* .img-gallery{
+  width: 100%;
+  height: auto;
+} */
+@supports(object-fit: cover){
+  .img_cover{
+    /* height: 100%; */
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+
+.img_cover:hover{
+  lighting-color: #000;
+  opacity: 50%;
+}
