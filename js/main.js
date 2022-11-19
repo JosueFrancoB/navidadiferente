@@ -147,7 +147,7 @@ jQuery(document).ready(($)=> {
   let clothes_images = ['./img/donativos/winter_clothes.png','./img/donativos/ropa1.jpeg', './img/donativos/ropa2.jpeg', './img/donativos/happy_clothes.png', './img/donativos/shoes.jpeg'];
   let toys_images = ['./img/donativos/toys1.png','./img/donativos/toys2.png', './img/donativos/toys3.jpeg', './img/donativos/toys4.jpeg', './img/donativos/toys5.jpg'];
   let candies_images = ['./img/donativos/candy1.jpg','./img/donativos/pinata1.jpeg', './img/donativos/candy2.jpeg', './img/donativos/pinata2.jpeg', './img/donativos/candy3.jpg'];
-  let money_images = ['./img/donativos/food1.jpeg','./img/donativos/money1.jpeg', './img/donativos/food2.jpeg', './img/donativos/money2.png', './img/donativos/food3.png'];
+  let money_images = ['./img/donativos/food1.jpeg','./img/donativos/money1.jpeg', './img/donativos/food2.jpg', './img/donativos/money2.png', './img/donativos/food3.png'];
 
   let donates = [
     {
