@@ -180,4 +180,15 @@ jQuery(document).ready(($)=> {
   
   $('[data-toggle="tooltip"]').tooltip()
   
+  var video_ = document.getElementById("myvideo");
+  if (video_.requestFullscreen) {
+    video_.requestFullscreen();
+  } else if (video_.mozRequestFullScreen) {
+    video_.mozRequestFullScreen();
+  } else if (video_.webkitRequestFullscreen) {
+    video_.webkitRequestFullscreen();
+  } else if (video_.msRequestFullscreen) { 
+    video_.msRequestFullscreen();
+  }
+
 });
