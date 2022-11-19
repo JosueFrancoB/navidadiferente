@@ -1,20 +1,20 @@
-jQuery(document).ready(function( $ ) {
+jQuery(document).ready(($)=> {
 
   // Back to top button
-  $(window).scroll(function() {
+  $(window).scroll(()=> {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
     } else {
       $('.back-to-top').fadeOut('slow');
     }
   });
-  $('.back-to-top').click(function(){
+  $('.back-to-top').click(()=>{
     $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
     return false;
   });
 
   // Header fixed on scroll
-  $(window).scroll(function() {
+  $(window).scroll(()=> {
     if ($(this).scrollTop() > 100) {
       $('#header').addClass('header-scrolled');
     } else {
@@ -52,7 +52,7 @@ jQuery(document).ready(function( $ ) {
 
   // Mobile Navigation
   if ($('#nav-menu-container').length) {
-    var $mobile_nav = $('#nav-menu-container').clone().prop({
+    let $mobile_nav = $('#nav-menu-container').clone().prop({
       id: 'mobile-nav'
     });
     $mobile_nav.find('> ul').attr({
@@ -64,20 +64,20 @@ jQuery(document).ready(function( $ ) {
     $('body').append('<div id="mobile-body-overly"></div>');
     $('#mobile-nav').find('.menu-has-children').prepend('<i class="fa fa-chevron-down"></i>');
 
-    $(document).on('click', '.menu-has-children i', function(e) {
+    $(document).on('click', '.menu-has-children i', (e)=> {
       $(this).next().toggleClass('menu-item-active');
       $(this).nextAll('ul').eq(0).slideToggle();
       $(this).toggleClass("fa-chevron-up fa-chevron-down");
     });
 
-    $(document).on('click', '#mobile-nav-toggle', function(e) {
+    $(document).on('click', '#mobile-nav-toggle', (e)=> {
       $('body').toggleClass('mobile-nav-active');
       $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
       $('#mobile-body-overly').toggle();
     });
 
-    $(document).click(function(e) {
-      var container = $("#mobile-nav, #mobile-nav-toggle");
+    $(document).click((e)=> {
+      let container = $("#mobile-nav, #mobile-nav-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
@@ -91,11 +91,11 @@ jQuery(document).ready(function( $ ) {
   }
 
   // Smooth scroll for the menu and links with .scrollto classes
-  $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
+  $('.nav-menu a, #mobile-nav a, .scrollto').on('click', ()=> {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
+      let target = $(this.hash);
       if (target.length) {
-        var top_space = 0;
+        let top_space = 0;
 
         if ($('#header').length) {
           top_space = $('#header').outerHeight();
@@ -135,13 +135,49 @@ jQuery(document).ready(function( $ ) {
   });
 
   // Buy tickets select the ticket type on click
-  $('#buy-ticket-modal').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget);
-    var ticketType = button.data('ticket-type');
-    var modal = $(this);
+  $('#buy-ticket-modal').on('show.bs.modal',  (event)=> {
+    let button = $(event.relatedTarget);
+    let ticketType = button.data('ticket-type');
+    let modal = $(this);
     modal.find('#ticket-type').val(ticketType);
   })
 
 // custom code
 
+  let clothes_images = ['./img/donativos/winter_clothes.png','./img/donativos/ropa1.jpeg', './img/donativos/ropa2.jpeg', './img/donativos/happy_clothes.png', './img/donativos/shoes.jpeg'];
+  let toys_images = ['./img/donativos/toys1.png','./img/donativos/toys2.png', './img/donativos/toys3.jpeg', './img/donativos/toys4.jpeg', './img/donativos/toys5.jpg'];
+  let candies_images = ['./img/donativos/candy1.jpg','./img/donativos/pinata1.jpeg', './img/donativos/candy2.jpeg', './img/donativos/pinata2.jpeg', './img/donativos/candy3.jpg'];
+  let money_images = ['./img/donativos/food1.jpeg','./img/donativos/money1.jpeg', './img/donativos/food2.jpeg', './img/donativos/money2.png', './img/donativos/food3.png'];
+
+  let donates = [
+    {
+      id: '#clothes',
+      images: clothes_images,
+    },
+    {
+      id: '#toys',
+      images: toys_images
+    },
+    {
+      id: '#candies',
+      images: candies_images
+    },
+    {
+      id:'#money',
+      images: money_images
+    }
+  ]
+
+  for (let don of donates) {
+    let img = $(don.id), i = 0, speed = 500;
+  window.setInterval(()=> {
+    img.fadeOut(speed, ()=> {
+      img.attr("src", don.images[(++i % don.images.length)]);
+      img.fadeIn(speed);
+    });
+  }, 5000);
+  }
+  
+  $('[data-toggle="tooltip"]').tooltip()
+  
 });
