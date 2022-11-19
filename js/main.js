@@ -175,7 +175,7 @@ jQuery(document).ready(($)=> {
       img.attr("src", don.images[(++i % don.images.length)]);
       img.fadeIn(speed);
     });
-  }, 5000);
+  }, 7000);
   }
   
   $('[data-toggle="tooltip"]').tooltip()
